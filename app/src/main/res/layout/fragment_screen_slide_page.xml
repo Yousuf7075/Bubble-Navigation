@@ -6,7 +6,7 @@
     android:layout_gravity="center"
     android:gravity="center"
     android:background="@color/blue_inactive"
-    tools:context=".fragment.ScreenSlidePageFragment">
+    tools:context=".ui.fragment.ScreenSlidePageFragment">
 
     <TextView
         android:id="@+id/screen_slide_title"

@@ -1,14 +1,18 @@
-package com.example.bubblenavigation
+package com.example.bubblenavigation.ui
 
 import android.graphics.Typeface
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
+import com.example.bubblenavigation.R
+import com.example.bubblenavigation.ui.fragment.*
+import com.example.bubblenavigation.utils.ScreenSlidePagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
-    private val fragList = ArrayList<ScreenSlidePageFragment>()
+    private val fragList = ArrayList<Fragment>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,48 +54,37 @@ class MainActivity : AppCompatActivity() {
 
     private fun setPagerAdapter() {
         val pagerAdapter =
-            ScreenSlidePagerAdapter(fragList, supportFragmentManager)
+            ScreenSlidePagerAdapter(
+                fragList,
+                supportFragmentManager
+            )
         view_pager.adapter = pagerAdapter
     }
 
     private fun setBadgeValue() {
-        bottom_navigation_view_linear.setBadgeValue(0, "40")
+        bottom_navigation_view_linear.setBadgeValue(0, null)
         bottom_navigation_view_linear.setBadgeValue(1, null) //invisible badge
 
         bottom_navigation_view_linear.setBadgeValue(2, "7")
-        bottom_navigation_view_linear.setBadgeValue(3, "2")
-        bottom_navigation_view_linear.setBadgeValue(4, "") //empty badge
+        bottom_navigation_view_linear.setBadgeValue(3, null)
+        bottom_navigation_view_linear.setBadgeValue(4, null) //empty badge
     }
 
     private fun openFragment() {
         fragList.add(
-            ScreenSlidePageFragment.newInstance(
-                getString(R.string.home),
-                R.color.red_inactive)
+            HomeFragment()
         )
         fragList.add(
-            ScreenSlidePageFragment.newInstance(
-                getString(R.string.search),
-                R.color.blue_inactive
-            )
+            SearchFragment()
         )
         fragList.add(
-            ScreenSlidePageFragment.newInstance(
-                getString(R.string.likes),
-                R.color.blue_grey_inactive
-            )
+            FavsFragment()
         )
         fragList.add(
-            ScreenSlidePageFragment.newInstance(
-                getString(R.string.notification),
-                R.color.green_inactive
-            )
+            NotifyFragment()
         )
         fragList.add(
-            ScreenSlidePageFragment.newInstance(
-                getString(R.string.profile),
-                R.color.purple_inactive
-            )
+            ProfileFragment()
         )
     }
 }

@@ -1,8 +1,9 @@
-package com.example.bubblenavigation
+package com.example.bubblenavigation.utils
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
+import com.example.bubblenavigation.utils.ScreenSlidePageFragment
 
 
 /**
@@ -11,7 +12,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter
  */
 @Suppress("DEPRECATION")
 class ScreenSlidePagerAdapter(
-    private val fragmentList: ArrayList<ScreenSlidePageFragment>,
+    private val fragmentList: ArrayList<Fragment>,
     fm: FragmentManager
 ) : FragmentStatePagerAdapter(fm) {
 

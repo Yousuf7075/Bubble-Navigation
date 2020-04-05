@@ -4,15 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragment.HomeFragment">
+    tools:context=".ui.fragment.SearchFragment">
 
     <TextView
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/home"
+        android:text="@string/search"
         android:textColor="@color/white"
         android:textSize="30sp"
-        android:background="@color/red_inactive"/>
+        android:background="@color/blue_inactive"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
